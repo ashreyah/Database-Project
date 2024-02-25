@@ -1,52 +1,78 @@
-<h1>JWipe - Disk Sanitization</h1>
+<h1>Resturant Database</h1>
 
- ### [YouTube Demonstration](https://youtu.be/7eJexJVCqJo)
 
 <h2>Description</h2>
-Project consists of a simple PowerShell script that walks the user through "zeroing out" (wiping) any drives that are connected to the system. The utility allows you to select the target disk and choose the number of passes that are performed. The PowerShell script will configure a diskpart script file based on the user's selections and then launch Diskpart to perform the disk sanitization.
+I created a vegan restaurant recommender website/app and was inspired to create a database for one of the restaurants on the site. The vegan Mexican restaurant database is designed to manage the operations of a fictional vegan restaurant specializing in Mexican cuisine. It includes tables to store information about customers, allergies, menu items, ingredients, orders, events, reservations, and more. The database was created using MySQL. 
 <br />
-
+The database was created using ER Model and SQL scripts executed in MySQL Workbench. The structure includes primary and foreign key relationships to maintain data integrity. Indexing is used to enhance query performance, especially for common search and association operations.
+<br />
 
 <h2>Languages and Utilities Used</h2>
 
-- <b>PowerShell</b> 
-- <b>Diskpart</b>
+- <b>MySQL</b> 
 
 <h2>Environments Used </h2>
 
-- <b>Windows 10</b> (21H2)
+- <b>Windows 10</b>
+- <b>MySQL Workbench</b>
 
-<h2>Program walk-through:</h2>
+<h2>Database Structure:</h2>
 
-<p align="center">
-Launch the utility: <br/>
-<img src="https://i.imgur.com/62TgaWL.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Select the disk:  <br/>
-<img src="https://i.imgur.com/tcTyMUE.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Enter the number of passes: <br/>
-<img src="https://i.imgur.com/nCIbXbg.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Confirm your selection:  <br/>
-<img src="https://i.imgur.com/cdFHBiU.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Wait for process to complete (may take some time):  <br/>
-<img src="https://i.imgur.com/JL945Ga.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Sanitization complete:  <br/>
-<img src="https://i.imgur.com/K71yaM2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Observe the wiped disk:  <br/>
-<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-
+ <b>Customers Table:</b>
+ <p>
+    •	Stores customer information such as name, contact details, and card information. <br />
+    •	Indexes on the email and card number columns for efficient searches.<br />
+ </p>
+ <b>Allergies Table:</b>
+ <p>
+    	•	Contains information about allergies, including the name and description. <br />
+     •	Indexed on the allergy name for quick lookups.<br />
+ </p>
+ <b>CustomerAllergies Table:</b>
+ <p>
+    	•	A junction table linking customers to their allergies. <br />
+     •	Indexed on both the customer ID and allergy ID for efficient association lookups.<br />
+ </p>
+ <b>CustomerAllergies Table:</b>
+ <p>
+    	•	A junction table linking customers to their allergies. <br />
+     •	Indexed on both the customer ID and allergy ID for efficient association lookups.<br />
+ </p>
+ <b>MenuItems Table:</b>
+ <p>
+    	•	Manages menu items with details like name, description, price, and category. <br />
+     •	Indexed on item name and category ID for search and category-based queries. <br />
+ </p> 
+ <b>Ingredients Table:</b>
+ <p>
+    	• Contains information about ingredients used in menu items. <br />
+     •	Indexed on the IngredientName column for optimized ingredient searches. <br />
+ </p>
+ <b>MenuItemIngredients Table:</b>
+ <p>
+     • A junction table linking menu items to their ingredients. <br />
+     •	Indexed on both the item ID and ingredient ID for efficient association lookups. <br />
+ </p>
+ <b>Orders Table:</b>
+ <p>
+     • Tracks customer orders with details like order date, total amount, and order status. <br />
+     •	Indexed on customer ID and order date for efficient order-related queries. <br />
+ </p>
+ <b>Order Items Table:</b>
+ <p>
+     • Records items included in each order with details like quantity and subtotal. <br />
+     •	Indexed on order ID and product ID for quick order item lookups. <br />
+ </p>
+ <b>Events Table:</b>
+ <p>
+     • Manages events with information such as event name, description, date, and time. <br />
+     •	Indexed on event name and date for efficient event-related queries. <br />
+ </p>
+ <b>Reservations Table:</b>
+ <p>
+     • Tracks customer reservations for events, including the number of guests and reservation date. <br />
+     •	Indexed on customer ID and event ID for quick reservation lookups. <br />
+ </p>
 <!--
  ```diff
 - text in red
